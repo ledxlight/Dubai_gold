@@ -1,0 +1,48 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+
+        <form action="/Search_branch_Leave" method="post">
+          <label for="" class="font-weight-bold">Branch </label>
+          <select class="form-select " aria-label="Default select example" name="branch">
+            <option value="malapuram">malapuram</option>
+            <option value="calicate">calicate</option>
+            <option value="kochi">kochi</option>
+          </select>
+          <button type="submit" class="btn  btn-primary  "> <span style="color: white;">Search </span></button>
+        </form>
+
+  <table class="table mt-4">
+    <tr>
+
+      <th scope="col" style="color: #632343;">Employee name </th>
+      <th scope="col" style="color: #632343;">Ecode</th>
+      <th scope="col" style="color: #632343;"> branch</th>
+      <th scope="col" style="color: #632343;">reason</th>
+      <th scope="col" style="color: #632343;">Date</th>
+      <th scope="col" style="color: #632343;">Expair Date</th>
+    </tr>
+    {% for i in val%}
+    <tr>
+      <td>&nbsp;{{i[1]}}</td>
+      <td>&nbsp;{{i[2]}}</td>
+      <td>&nbsp;{{i[3]}}</td>
+      <td>&nbsp;{{i[6]}}</td>
+      <td>&nbsp;{{i[9]}}</td>
+      <td>&nbsp;{{i[10]}}</td>
+      <td>
+        <a href="/rejectReaqusetEmployee?id={{i[5]}}" onclick="return confirm('Are you sure?') "
+          class="btn btn-danger">Reject</a>
+        <a href="/AcceptReaqusetEmployee?id={{i[5]}}" onclick="return confirm('Are you sure?') "
+          class="btn btn-primary">Accept</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+
+</div></div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+
+        <form action="/Search_branch_SetTarget" method="post">
+          <label for="" class="font-weight-bold">Branch </label>
+          <select class="form-select " aria-label="Default select example" name="branch">
+            <option value="malapuram">malapuram</option>
+            <option value="calicate">calicate</option>
+            <option value="kochi">kochi</option>
+          </select>
+          <button type="submit" class="btn  btn-primary  "> <span style="color: white;">Search </span></button>
+        </form>
+
+        <table class="table mt-5">
+          <tr>
+            <th scope="col" style="color: #632343;">Employee name </th>
+            <th scope="col" style="color: #632343;">Ecode</th>
+            <th scope="col" style="color: #632343;">branch</th>
+          </tr>
+          {% for i in val%}
+          <tr>
+            <td>&nbsp;{{i[5]}}</td>
+            <td>&nbsp;{{i[6]}}</td>
+            <td>&nbsp;{{i[7]}}</td>
+            <td>
+              <a href="/SettargetEmployees?id={{i[8]}}" class="btn " style="background-color:#632343;"> <span
+                  style="color: white;">Set Target</span></button>
+            </td>
+            
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

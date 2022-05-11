@@ -1,0 +1,41 @@
+{% extends '/employee/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+  
+  <script type="text/javascript">
+    function CheckColors(val) {
+      var element = document.getElementById('color');
+      if (val == 'others')
+        element.style.display = 'block';
+      else
+        element.style.display = 'none';
+    }
+  </script>
+
+ 
+  <form id="form1" name="form1" method="post" action="/GetLeaveRequest">
+          <label class="font-weight-bold" style="color: #632343;">date</label><br>
+          <input type="date" class="form-control" required name="date"></input><br>
+          <label class="font-weight-bold" style="color: #632343;">expair date</label><br>
+          <input type="date" class="form-control" required name="expdate"></input><br>
+
+          <select name="reason" class="form-select col-md-12" onchange='CheckColors(this.value);'>
+            <option value="medical" style="color: #632343;">medical</option>
+            <option value="marraige" style="color: #632343;">marraige</option>
+            <option value="others" style="color: #632343;">others</option>
+          </select>
+          <br><br>
+          <input type="text" class="form-control" name="discription" placeholder="enter your reason" id="color"
+            style="display:none;"></input>
+          <br><button type="submit" onclick="" name="submit" class="btn  float-right"
+            style="background-color:#632343;"> <span style="color: white;">Submit</span></button>
+  </form>
+  </div>
+  </div>
+  </div>
+  </form>
+
+  {% endblock %}

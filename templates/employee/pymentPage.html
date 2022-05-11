@@ -1,0 +1,24 @@
+{% extends '/employee/layout.html' %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+  <form id="form1" name="form1" method="post" action="/GetPymentPage">
+          <label for="" class="font-weight-bold col-md-12 mt-5" style="color: #632343;">select option</label>
+          <select name="PymentOption" class="form-select col-md-12 mt-1" >
+            <option value="TA" style="color: #632343;">TA</option>
+            <option value="FA" style="color: #632343;">FA</option>
+            <option value="Salary" style="color: #632343;">Salary</option>
+            <option value="Advanse" style="color: #632343;">Advanse</option>
+          </select>
+          <input type="number" class="form-control mt-2" required name="pyment">
+
+          <br><br><br><button type="submit" onclick="" name="submit" class="btn  float-right"
+            style="background-color:#632343;"> <span style="color: white;">Submit</span></button>
+  </form>
+  </div>
+  </div>
+  </div>
+  </form>
+
+  {% endblock %}
